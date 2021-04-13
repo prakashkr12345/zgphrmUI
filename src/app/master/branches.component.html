@@ -1,0 +1,219 @@
+<!-- Page Header -->
+<div class="dt-page__header">
+    <h1 class="dt-page__title">{{headerText}}</h1>
+</div>
+<!-- /page header -->
+
+
+<div class="row">
+
+    <!-- Grid Item -->
+    <div class="col-12">
+
+        <!-- Card -->
+        <!-- <gx-card card-title="Control sizing"> -->
+
+        <!-- Form -->
+        <form (button)="SaveClick()" #myForm="ngForm">
+
+            <div class="row">
+                <div class="col-xl-12">
+
+                    <button type="button" class="btn btn-light mr-2 mb-2" (click)="SaveClick()">Save</button>
+                    <button type="button" class="btn btn-light mr-2 mb-2" (click)="CancelClick()">Cancel</button>
+
+
+
+                </div>
+            </div>
+
+            <!-- Form Group -->
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Company</label>
+                <div class="col-md-10 col-sm-9">
+                    <select class="form-control" name="company" required autofocus placeholder="Enter Company Name"
+                        [(ngModel)]="model.company" #company="ngModel">
+                        <option *ngFor="let rg of companyList" value={{rg.Id}}>
+                            {{rg.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <!-- /form group -->
+            <!-- Form Group -->
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Branch Code</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="Code" name="code"
+                        [(ngModel)]="model.code" #code="ngModel" required>
+                    <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+
+                        <div *ngIf="code?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Branch</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="branch" name="branch"
+                        [(ngModel)]="model.branch" #branch="ngModel" required>
+                    <div *ngIf="branch.invalid && (branch.dirty || branch.touched)" class="alert alert-danger">
+
+                        <div *ngIf="branch?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Address</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="address" name="address"
+                        [(ngModel)]="model.address" #address="ngModel" required>
+                    <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
+
+                        <div *ngIf="address?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">District</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="district" name="district"
+                        [(ngModel)]="model.district" #district="ngModel" required>
+                    <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
+
+                        <div *ngIf="district?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">State</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="state" name="state"
+                        [(ngModel)]="model.state" #state="ngModel" required>
+                    <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
+
+                        <div *ngIf="state?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Pin Code</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="pincode" name="pincode"
+                        [(ngModel)]="model.pincode" #pincode="ngModel" required>
+                    <div *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)" class="alert alert-danger">
+
+                        <div *ngIf="pincode?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+
+
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Mobile No</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="mobileno" name="mobileno"
+                        [(ngModel)]="model.mobileno" #mobileno="ngModel" required>
+                    <div *ngIf="mobileno.invalid && (mobileno.dirty || mobileno.touched)" class="alert alert-danger">
+
+                        <div *ngIf="mobileno?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+            
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Land Line No</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="landlineno" name="landlineno"
+                        [(ngModel)]="model.landlineno" #landlineno="ngModel" required>
+                    <div *ngIf="landlineno.invalid && (landlineno.dirty || landlineno.touched)" class="alert alert-danger">
+
+                        <div *ngIf="landlineno?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+            <div class="form-group form-row">
+                <label for="normal-input-4" class="col-md-2 col-sm-3 col-form-label text-sm-right">Email</label>
+                <div class="col-md-10 col-sm-9">
+                    <input type="text" class="form-control" id="normal-input-4" placeholder="email" name="email"
+                        [(ngModel)]="model.email" #email="ngModel" required>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+
+                        <div *ngIf="email?.errors?.required">
+                            required.
+                        </div>
+                        <!-- <div *ngIf="code?.errors?.pattern">Only Alphapet</div> -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /form group -->
+
+
+
+
+
+        </form>
+        <!-- /form -->
+
+        <!-- </gx-card> -->
+        <!-- /Card -->
+
+    </div>
+    <!-- /grid item -->
+
+</div>
