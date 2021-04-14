@@ -4,86 +4,66 @@
 
 <div class="row">
     <div class="col-xl-12">
-
-
         <button type="button" class="btn btn-light mr-2 mb-2" (click)="NewClick()">New</button>
-        <!-- <button type="button" class="btn btn-light mr-2 mb-2">Edit</button>
-                <button type="button" class="btn btn-light mr-2 mb-2">Delete</button> -->
-
-
     </div>
     <div class="row">
         <div class="col-xl-12">
             <div class="table-responsive"></div>
-        <gx-card class="overflow-hidden" body-class="p-0">
+            <gx-card class="overflow-hidden" body-class="p-0">
 
-        <p-table #dt [value]="data" styleClass="p-datatable-gridlines" selectionMode="single" [paginator]="true"
-            [rows]="10" [rowsPerPageOptions]="[10,25,50]" [globalFilterFields]="['company']">
-            <ng-template pTemplate="caption">
-                <div style="text-align: right">
-                    <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
-                    <input type="text" pInputText size="50" placeholder="Search"
-                        (input)="dt.filterGlobal($event.target.value, 'contains')">
-                </div>
-            </ng-template>
-            <ng-template pTemplate="header">
-                
-                <tr>
-                    
-                    <th  style="width: 100px;">#</th>
-                    <th  style="width: 100px;">Sno</th>
-                    <th  style="width: 100%">Code</th>
-                    <th  style="width: 100%">Name</th>
-                    <th style="width: 100%">
-                        Status
-                    </th>
-                    
+                <p-table #dt [value]="data" styleClass="p-datatable-gridlines" selectionMode="single" [paginator]="true"
+                    [rows]="10" [rowsPerPageOptions]="[10,25,50]" [globalFilterFields]="['company']">
+                    <ng-template pTemplate="caption">
+                        <div style="text-align: right">
+                            <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+                            <input type="text" pInputText size="50" placeholder="Search"
+                                (input)="dt.filterGlobal($event.target.value, 'contains')">
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header">
 
-                </tr>
-            
-            </ng-template>
-            <ng-template pTemplate="body" let-item let-ri="rowIndex">
-                <tr>
-                    <td width="10%">
-                        <table>
-                            <td>
-                                <!-- <gx-icon name="editors" class="mr-2 ng-tns-c246-22 icon icon-editors icon-fw"></gx-icon> -->
-        
-                                <gx-icon type="button" [hidden]  class="mr-2 ng-tns-c246-22 icon icon-editors icon-fw" (click)="editgriddata(item,data.indexOf(item))"></gx-icon>
-                                 <gx-icon type="button" [hidden] class="mr-2 ng-tns-c246-22 icon icon-trash icon-fw" (click)="deletegriddata(item)"></gx-icon>
+                        <tr>
+
+                            <th style="width: 100px;">#</th>
+                            <th style="width: 100px;">Sno</th>
+                            <th style="width: 100%">Code</th>
+                            <th style="width: 100%">Name</th>
+                            <th style="width: 100%">
+                                Status
+                            </th>
+
+
+                        </tr>
+
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item let-ri="rowIndex">
+                        <tr>
+                            <td width="10%">
+                                <table>
+                                    <td>
+                                        <!-- <gx-icon name="editors" class="mr-2 ng-tns-c246-22 icon icon-editors icon-fw"></gx-icon> -->
+
+                                        <gx-icon type="button" [hidden]
+                                            class="mr-2 ng-tns-c246-22 icon icon-editors icon-fw"
+                                            (click)="editgriddata(item,data.indexOf(item))"></gx-icon>
+                                        <gx-icon type="button" [hidden]
+                                            class="mr-2 ng-tns-c246-22 icon icon-trash icon-fw"
+                                            (click)="deletegriddata(item)"></gx-icon>
+                                    </td>
+
+                                </table>
                             </td>
-                            
-                        </table>
-                    </td>
-                    <td>{{ri+1}}</td>
-                    <td>{{item.code}}</td>
-                    <td>{{item.name }}</td>                   
-                    <td>{{item.status}}</td>
-                   
+                            <td>{{ri+1}}</td>
+                            <td>{{item.code}}</td>
+                            <td>{{item.name }}</td>
+                            <td>{{item.status}}</td>
 
-                </tr>
-            </ng-template>
-        </p-table>
-        </gx-card>
+
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </gx-card>
         </div>
-        </div>
-        
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
